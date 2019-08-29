@@ -1,0 +1,29 @@
+
+
+
+</br>
+</br>
+
+<table class="table table-condensed">
+      <thead>
+        <tr>
+          <th>User Names</th>
+          <th>Citys</th>
+          <th>Emails</th>
+          <th>Mobile Numbers</th>
+          <th>Tenth_Percentage</th>
+        </tr>
+      </thead>
+      <tbody>
+      	<%@user.each do |user|%>
+          <tr>
+            <td><%=user.username%></td>
+            <td><%=user.city%></td>
+            <td><%=user.email%></td>
+            <td><%=user.mobile_number%></td>
+            <td><%=user.tenth_percentage%></td>
+         
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
