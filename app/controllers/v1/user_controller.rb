@@ -5,7 +5,7 @@ class V1::UserController < ApplicationController
 		user = User.where(email: params[:email]).first
 	      
 		if user&.valid_password?(params[:password])
-		  	render json: user.as_json(only:[:email,:first_name,:last_name,:phone,:authentication_token]), status: :created
+		  	render json: user.as_json(only:[:email,:username,:city,:mobile_number,:tenth_percentage,:authentication_token]), status: :created
 		else
 		  	head(:unauthorized)
 		end
@@ -26,7 +26,9 @@ class V1::UserController < ApplicationController
 	private 
 
 	def usr_params
-		params.permit(:email,:password,:phone,:first_name,:last_name)
+		params.permit(:email,:password,:username,:city,:tenth_percentage,:mobile_number)
 	end
 
 end
+
+  	

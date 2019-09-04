@@ -13,7 +13,7 @@ class V1::AdminController < ApplicationController
 
 
 	def signup
-		admin = Admin.new(admin_params)
+		admin = Admin.new(adn_params)
 
 		if admin.save
 		    render json: {status: 'success', data:admin}, status: :ok
@@ -25,8 +25,9 @@ class V1::AdminController < ApplicationController
 
 	private 
 
-	def admin_params
+	def adn_params
 		params.permit(:email,:password)
 	end
 
 end
+ 	 
