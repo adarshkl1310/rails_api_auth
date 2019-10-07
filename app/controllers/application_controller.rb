@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  
   acts_as_token_authentication_handler_for User, fallback: :none
   acts_as_token_authentication_handler_for Admin, fallback: :none
 
@@ -11,6 +12,7 @@ def check_is_admin
     return true
   else
 	redirect_to students_path,notice:"page looking for sign_in"
+  
   end
  
 end
@@ -34,8 +36,10 @@ end
  protected
 
 def configure_permitted_parameters
+
    devise_parameter_sanitizer.permit(:sign_up, keys: [:username,:mobile_number,:city,:tenth_percentage])
    devise_parameter_sanitizer.permit(:account_update, keys: [:username,:mobile_number,:city,:tenth_percentage]) 
+
 end
 
 
