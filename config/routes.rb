@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   devise_for :admins, path: 'admins' # eg. http://localhost:3000/admins/sign_in
 
   resources :students
+
+  resources :homes
+  resources :names
+  resources :rubys
 end
 
 
